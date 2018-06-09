@@ -1,0 +1,4 @@
+package: github.com/yanc0/kubernetes-updown-io-controller
+import:
+- package: k8s.io/client-go
+  version: v7.0.0

@@ -1,0 +1,6 @@
+apiVersion: "updown.io/v1alpha1"
+kind: "Check"
+metadata:
+  name: "google-com"
+spec:
+  url: "https://google.com"

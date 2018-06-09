@@ -1,0 +1,6 @@
+apiVersion: "updown.io/v1alpha1"
+kind: "Check"
+metadata:
+  name: "www-skale-5-com"
+spec:
+  url: "https://www.skale-5.com"
