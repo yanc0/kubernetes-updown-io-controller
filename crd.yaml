@@ -20,3 +20,31 @@ spec:
           properties:
             url:
               type: "string"
+            period:
+              type: "integer"
+            apdexT:
+              type: "float"
+            enabled:
+              type: "boolean"
+            published:
+              type: "boolean"
+            alias:
+              type: "string"
+            stringMatch:
+              type: "string"
+            muteUntil:
+              type: "string"
+            disabledLocations:
+              type: array
+              items:
+                type: string
+            customHeaders:
+              type: array
+              items:
+                properties:
+                  key:
+                    type: string
+                  value:
+                    type: string
+
+              

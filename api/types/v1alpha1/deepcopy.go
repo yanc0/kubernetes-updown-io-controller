@@ -1,13 +1,38 @@
 package v1alpha1
 
-import "k8s.io/apimachinery/pkg/runtime"
+import (
+	"k8s.io/apimachinery/pkg/runtime"
+)
 
 
 func (in *Check) DeepCopyInto(out *Check) {
+	inDisabledLocations := make([]string, 0)
+	for _, location := range in.Spec.DisabledLocations {
+		inDisabledLocations = append(inDisabledLocations, location)
+	}
+
+	inCustomHeaders := make([]CustomHeader, 0)
+	for _, customHeader := range inCustomHeaders {
+		c := CustomHeader {
+			Key: customHeader.Key,
+			Value: customHeader.Value,
+		}
+		inCustomHeaders = append(inCustomHeaders, c)
+	}
+
 	out.TypeMeta = in.TypeMeta
 	out.ObjectMeta = in.ObjectMeta
 	out.Spec = CheckSpec{
 		URL: in.Spec.URL,
+		Period: in.Spec.Period,
+		ApdexT: in.Spec.ApdexT,
+		Enabled: in.Spec.Enabled,
+		Published: in.Spec.Published,
+		Alias: in.Spec.Alias,
+		StringMatch: in.Spec.StringMatch,
+		MuteUntil: in.Spec.MuteUntil,
+		DisabledLocations: inDisabledLocations,
+		CustomHeaders: inCustomHeaders,
 	}
 }
 

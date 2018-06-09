@@ -4,3 +4,9 @@ metadata:
   name: "www-skale-5-com"
 spec:
   url: "https://www.skale-5.com"
+  period: 300
+  customHeaders:
+  - key: toto
+    value: pouette
+  - key: adele
+    value: mechante
