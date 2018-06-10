@@ -16,7 +16,7 @@ spec:
       serviceAccountName: kubernetes-updown-io-controller
       containers:
       - name: helloworld
-        image: yanc0/kubernetes-updown-io-controller:v0.2
+        image: yanc0/kubernetes-updown-io-controller:v0.3
         envFrom:
          - configMapRef:
              name: kubernetes-updown-io-controller-config
