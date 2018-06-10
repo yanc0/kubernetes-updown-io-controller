@@ -1,4 +1,4 @@
-FROM scratch
+FROM debian:latest
 
 COPY kubernetes-updown-io-controller /
 

@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-updown-io-controller
+spec:
+  selector:
+    matchLabels:
+      name: kubernetes-updown-io-controller
+  minReadySeconds: 5
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: kubernetes-updown-io-controller
+    spec:
+      serviceAccountName: kubernetes-updown-io-controller
+      containers:
+      - name: helloworld
+        image: yanc0/kubernetes-updown-io-controller:v0.2
+        envFrom:
+         - configMapRef:
+             name: kubernetes-updown-io-controller-config

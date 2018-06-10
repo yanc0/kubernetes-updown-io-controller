@@ -9,11 +9,11 @@ be ran on any important environment.
 
 ### Fill you updown.io API key in controller's configMap
 
-`vim ./manifests/kubernetes-updown-io-controller/configmap.yaml`
+`vim ./manifests/controller/configmap.yaml`
 
 ### Install kubernetes-updown-io-controller
 
-`kubectl apply -f ./manifests/kubernetes-updown-io-controller`
+`kubectl apply -f ./manifests/controller`
 
 ### Add new checks
 
