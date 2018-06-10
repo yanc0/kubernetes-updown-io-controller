@@ -6,7 +6,6 @@ spec:
   selector:
     matchLabels:
       name: kubernetes-updown-io-controller
-  minReadySeconds: 5
   replicas: 1
   template:
     metadata:
@@ -16,7 +15,17 @@ spec:
       serviceAccountName: kubernetes-updown-io-controller
       containers:
       - name: helloworld
-        image: yanc0/kubernetes-updown-io-controller:v0.3
+        image: yanc0/kubernetes-updown-io-controller:v0.4
         envFrom:
          - configMapRef:
              name: kubernetes-updown-io-controller-config
+        command: ["/kubernetes-updown-io-controller"]
+        args:
+        - "-apikey=$(API_KEY)"
+        resources:
+          requests:
+            memory: "32Mi"
+            cpu: "50m"
+          limits:
+            memory: "32Mi"
+            cpu: "50m"

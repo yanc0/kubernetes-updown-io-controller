@@ -44,7 +44,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	store := WatchResources(clientSet, "default")
+	store := watchResources(clientSet, "default")
 
 
 
