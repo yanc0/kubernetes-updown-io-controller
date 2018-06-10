@@ -1,0 +1,6 @@
+language: go
+go:
+- '1.x'
+install:
+- curl https://glide.sh/get | sh
+- glide up -v
