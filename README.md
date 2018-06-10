@@ -3,6 +3,8 @@
 **Important**: this project was created for example purpose only. It is not intended to
 be ran on any important environment.
 
+[![Build Status](https://travis-ci.org/yanc0/kubernetes-updown-io-controller.svg?branch=master)](https://travis-ci.org/yanc0/kubernetes-updown-io-controller)
+
 ## Usage
 
 ### Fill you updown.io API key in controller's configMap
