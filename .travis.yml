@@ -11,5 +11,6 @@ install:
 deploy:
   provider: script
   script: bash deploy_docker_hub.sh
+  skip_cleanup: true
   on:
     tags: true
