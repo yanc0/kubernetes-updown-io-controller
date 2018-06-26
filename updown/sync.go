@@ -1,10 +1,11 @@
 package updown
 
 import (
-	"github.com/antoineaugusti/updown"
-	"github.com/yanc0/kubernetes-updown-io-controller/api/types/v1alpha1"
 	"log"
 	"time"
+
+	"github.com/antoineaugusti/updown"
+	"github.com/yanc0/kubernetes-updown-io-controller/api/types/v1alpha1"
 )
 
 var lastUpdate time.Time

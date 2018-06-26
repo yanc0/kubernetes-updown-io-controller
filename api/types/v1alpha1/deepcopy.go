@@ -4,7 +4,6 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 )
 
-
 func (in *Check) DeepCopyInto(out *Check) {
 	inDisabledLocations := make([]string, 0)
 	for _, location := range in.Spec.DisabledLocations {
@@ -13,8 +12,8 @@ func (in *Check) DeepCopyInto(out *Check) {
 
 	inCustomHeaders := make([]CustomHeader, 0)
 	for _, customHeader := range inCustomHeaders {
-		c := CustomHeader {
-			Key: customHeader.Key,
+		c := CustomHeader{
+			Key:   customHeader.Key,
 			Value: customHeader.Value,
 		}
 		inCustomHeaders = append(inCustomHeaders, c)
@@ -23,16 +22,16 @@ func (in *Check) DeepCopyInto(out *Check) {
 	out.TypeMeta = in.TypeMeta
 	out.ObjectMeta = in.ObjectMeta
 	out.Spec = CheckSpec{
-		URL: in.Spec.URL,
-		Period: in.Spec.Period,
-		ApdexT: in.Spec.ApdexT,
-		Enabled: in.Spec.Enabled,
-		Published: in.Spec.Published,
-		Alias: in.Spec.Alias,
-		StringMatch: in.Spec.StringMatch,
-		MuteUntil: in.Spec.MuteUntil,
+		URL:               in.Spec.URL,
+		Period:            in.Spec.Period,
+		ApdexT:            in.Spec.ApdexT,
+		Enabled:           in.Spec.Enabled,
+		Published:         in.Spec.Published,
+		Alias:             in.Spec.Alias,
+		StringMatch:       in.Spec.StringMatch,
+		MuteUntil:         in.Spec.MuteUntil,
 		DisabledLocations: inDisabledLocations,
-		CustomHeaders: inCustomHeaders,
+		CustomHeaders:     inCustomHeaders,
 	}
 }
 

@@ -8,15 +8,15 @@ import (
 	"k8s.io/client-go/rest"
 )
 
-type ExampleV1Alpha1Interface interface {
+type UpdownV1Alpha1Interface interface {
 	Checks(namespace string) CheckInterface
 }
 
-type ExampleV1Alpha1Client struct {
+type UpdownV1Alpha1Client struct {
 	restClient rest.Interface
 }
 
-func NewForConfig(c *rest.Config) (*ExampleV1Alpha1Client, error) {
+func NewForConfig(c *rest.Config) (*UpdownV1Alpha1Client, error) {
 	v1alpha1.AddToScheme(scheme.Scheme)
 	config := *c
 	config.ContentConfig.GroupVersion = &schema.GroupVersion{Group: v1alpha1.GroupName, Version: v1alpha1.GroupVersion}
@@ -29,10 +29,10 @@ func NewForConfig(c *rest.Config) (*ExampleV1Alpha1Client, error) {
 		return nil, err
 	}
 
-	return &ExampleV1Alpha1Client{restClient: client}, nil
+	return &UpdownV1Alpha1Client{restClient: client}, nil
 }
 
-func (c *ExampleV1Alpha1Client) Checks(namespace string) CheckInterface {
+func (c *UpdownV1Alpha1Client) Checks(namespace string) CheckInterface {
 	return &checkClient{
 		restClient: c.restClient,
 		ns:         namespace,

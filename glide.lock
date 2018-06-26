@@ -1,11 +1,13 @@
-hash: 5f99a96d60b2341bc154d7557fb021c416c93bd67ac8b7a64aaf7e8beb949701
-updated: 2018-06-09T20:28:56.468665508+02:00
+hash: 89839923b5703952eaf27cbca862f432d8d224e8bd6ea22495c337da8ef64340
+updated: 2018-06-26T17:07:47.876925424+02:00
 imports:
 - name: cloud.google.com/go
   version: 3b1ae45394a234c385be014e9a488f2bb6eef821
   subpackages:
   - compute/metadata
   - internal
+- name: github.com/antoineaugusti/updown
+  version: f0053dde61414c6d3cc9e5476ef037d3fdc17486
 - name: github.com/Azure/go-autorest
   version: d4e6b95c12a08b4de2d48b45d5b4d594e5d32fab
   subpackages:
@@ -27,7 +29,7 @@ imports:
   - proto
   - sortkeys
 - name: github.com/golang/glog
-  version: 44145f04b68cf362d9c4df2182967c2275eaefed
+  version: 23def4e6c14b4da8ac2ed8007337bc5eb5007998
 - name: github.com/golang/protobuf
   version: 1643683e1b54a9e88ad26d98f81400c8c9d9f4f9
   subpackages:
@@ -68,13 +70,10 @@ imports:
   subpackages:
   - context
   - context/ctxhttp
-  - html
-  - html/atom
   - http2
   - http2/hpack
   - idna
   - lex/httplex
-  - websocket
 - name: golang.org/x/oauth2
   version: a6bd8cefa1811bd24b86f8902872e4e8225f74c4
   subpackages:

@@ -12,7 +12,7 @@ import (
 	"k8s.io/client-go/tools/cache"
 )
 
-func watchResources(clientSet client_v1alpha1.ExampleV1Alpha1Interface, namespace string) cache.Store {
+func watchResources(clientSet client_v1alpha1.UpdownV1Alpha1Interface, namespace string) cache.Store {
 	checkStore, checkController := cache.NewInformer(
 		&cache.ListWatch{
 			ListFunc: func(lo metav1.ListOptions) (result runtime.Object, err error) {

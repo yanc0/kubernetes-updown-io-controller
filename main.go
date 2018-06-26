@@ -2,12 +2,13 @@ package main
 
 import (
 	"flag"
-	clientV1alpha1 "github.com/yanc0/kubernetes-updown-io-controller/clientset/v1alpha1"
-	_ "k8s.io/client-go/plugin/pkg/client/auth"
 	"log"
 	"time"
+
 	"github.com/yanc0/kubernetes-updown-io-controller/api/types/v1alpha1"
+	clientV1alpha1 "github.com/yanc0/kubernetes-updown-io-controller/clientset/v1alpha1"
 	"github.com/yanc0/kubernetes-updown-io-controller/updown"
+	_ "k8s.io/client-go/plugin/pkg/client/auth"
 
 	"k8s.io/client-go/rest"
 	"k8s.io/client-go/tools/clientcmd"
@@ -45,8 +46,6 @@ func main() {
 		panic(err)
 	}
 	store := watchResources(clientSet, "default")
-
-
 
 	for {
 		checks := make([]*v1alpha1.Check, 0)

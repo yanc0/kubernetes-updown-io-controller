@@ -5,21 +5,21 @@ import (
 )
 
 type CustomHeader struct {
-	Key string `json:""`
+	Key   string `json:""`
 	Value string `json:""`
 }
 
 type CheckSpec struct {
-	URL string `json:"url"`
-	Period int `json:"period"`
-	ApdexT float64 `json:"apdexT"`
-	Enabled bool `json:"enabled"`
-	Published bool `json:"published"`
-	Alias string `json:"alias"`
-	StringMatch string `json:"stringMatch"`
-	MuteUntil string `json:"muteUntil"`
-	DisabledLocations []string `json:"disabledLocations"`
-	CustomHeaders []CustomHeader `json:"customHeaders"`
+	URL               string         `json:"url"`
+	Period            int            `json:"period"`
+	ApdexT            float64        `json:"apdexT"`
+	Enabled           bool           `json:"enabled"`
+	Published         bool           `json:"published"`
+	Alias             string         `json:"alias"`
+	StringMatch       string         `json:"stringMatch"`
+	MuteUntil         string         `json:"muteUntil"`
+	DisabledLocations []string       `json:"disabledLocations"`
+	CustomHeaders     []CustomHeader `json:"customHeaders"`
 }
 
 type Check struct {
