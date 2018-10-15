@@ -6,9 +6,6 @@ go:
 - '1.x'
 env:
   - CGO_ENABLED=0
-install:
-- curl https://glide.sh/get | sh
-- glide up -v
 
 deploy:
   provider: script
