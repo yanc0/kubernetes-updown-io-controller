@@ -16,10 +16,12 @@ import (
 
 var kubeconfig string
 var updownAPIKey string
+var namespace string
 
 func init() {
 	flag.StringVar(&kubeconfig, "kubeconfig", "", "path to Kubernetes config file")
 	flag.StringVar(&updownAPIKey, "apikey", "", "updown.io api key")
+	flag.StringVar(&namespace, "namespace", "default", "namespace to watch check resources")
 	flag.Parse()
 }
 
@@ -45,7 +47,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	store := watchResources(clientSet, "default")
+	store := watchResources(clientSet, namespace)
 
 	for {
 		checks := make([]*v1alpha1.Check, 0)
